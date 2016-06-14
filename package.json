@@ -1,0 +1,26 @@
+{
+  "name": "palindromic-rolling-string-hash",
+  "version": "1.0.0",
+  "description": "Palindromic Rolling String Hash solution to the longest palindromic substring problem in O(n) time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "rolling-string-hash",
+    "palindrome"
+  ],
+  "author": "Alec Lownes",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cakenggt/palindromic-rolling-string-hash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cakenggt/palindromic-rolling-string-hash/issues"
+  },
+  "homepage": "https://github.com/cakenggt/palindromic-rolling-string-hash#readme",
+  "dependencies": {
+    "rolling-string-hash": "^0.3.1"
+  }
+}

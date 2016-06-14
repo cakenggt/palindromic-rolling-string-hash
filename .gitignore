@@ -1,0 +1,5 @@
+node_modules
+*.db
+static/js/bundle.js
+*.db-journal
+static/css/stylesheet.css
