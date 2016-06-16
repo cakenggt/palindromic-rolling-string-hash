@@ -1,6 +1,6 @@
 {
   "name": "palindromic-rolling-string-hash",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Palindromic Rolling String Hash solution to the longest palindromic substring problem in O(n) time.",
   "main": "index.js",
   "scripts": {
