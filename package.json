@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/cakenggt/palindromic-rolling-string-hash#readme",
   "dependencies": {
-    "rolling-string-hash": "^0.3.1",
+    "rolling-string-hash": "*",
     "chai": "^3.5.0",
     "mocha": "^2.5.3"
   }
