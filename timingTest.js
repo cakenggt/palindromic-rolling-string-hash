@@ -1,3 +1,4 @@
+/*jshint esversion:6*/
 var util = require('./index');
 var fs = require('fs');
 var RollingPalindrome = require('./RollingPalindrome');
@@ -11,7 +12,7 @@ for (var x = 1; x < 201; x++){
   var start = Date.now();
   util.getLargestPalindrome(str);
   var end = Date.now();
-  csv += (x*multiplier) + ',' + (end-start) + '\n';
+  csv += `${x*multiplier},${end-start}\n`;
 }
 
 csv += '\nPalindromic Rolling String Hash Timing Test\n';
@@ -28,7 +29,7 @@ for (var x = 1; x < 21; x++){
     rh.isPalindrome();
   }
   var end = Date.now();
-  csv += (x*multiplier) + ',' + (end-start) + '\n';
+  csv += `${x*multiplier},${end-start}\n`;
 }
 
 fs.writeFile('timingTestResult.csv', csv);
