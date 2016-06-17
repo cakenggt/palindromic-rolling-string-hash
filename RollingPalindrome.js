@@ -30,6 +30,9 @@ RollingPalindrome.prototype.addRight = function(str){
 };
 
 RollingPalindrome.prototype.removeRight = function(x){
+  if (x === undefined){
+    x = 1;
+  }
   //check if x is larger than size
   var result = '';
   if (x > this.end.getLength()){
@@ -47,6 +50,9 @@ RollingPalindrome.prototype.removeRight = function(x){
 };
 
 RollingPalindrome.prototype.removeLeft = function(x){
+  if (x === undefined){
+    x = 1;
+  }
   //check if x is larger than size
   var result = '';
   if (x > this.beg.getLength()){

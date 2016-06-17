@@ -4,7 +4,7 @@ function getLargestPalindrome(str){
   str += '*';
   //console.log('starting with', str);
   var largest = 0;
-  var longest = '';
+  var longestStart = 0;
   //go through from the last char and adding on new ones
   //keep track of what the largest palindrome currently is
   //test the largest palindrome +1 and +2 chars for palindrome
@@ -22,7 +22,7 @@ function getLargestPalindrome(str){
     if (rp.isPalindrome()){
       //console.log('first palindrome' + rp.getLength());
       largest = rp.getLength();
-      longest = rp.getString();
+      longestStart = s;
       if (s+largest < str.length){
         //add char on to right side to make it +1
         rp.addRight(str[s+largest]);
@@ -33,7 +33,7 @@ function getLargestPalindrome(str){
       if (rp.isPalindrome()){
         //console.log('second palindrome' + rp.getLength());
         largest = rp.getLength();
-        longest = rp.getString();
+        longestStart = s;
       }
       rp.addRight(last);//now +1
     }
@@ -42,6 +42,7 @@ function getLargestPalindrome(str){
     }
     //console.log('at end rp is', rp.getString());
   }
+  var longest = str.substr(longestStart, largest);
   return [largest, longest];
 }
 

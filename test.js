@@ -5,8 +5,6 @@ var expect = require('chai').expect;
 var util = require('./index');
 var RollingPalindrome = require('./RollingPalindrome');
 
-var letters = 'abcdefghijklmnopqrstuvwxyz';
-
 describe('palindrome tests', function(){
   it('isPalindrome', function(){
     var rp = new RollingPalindrome('a');
@@ -65,38 +63,3 @@ describe('getLargestPalindrome', function(){
     expect(util.getLargestPalindrome('bananas')[0]).to.equal(5);
   });
 });
-describe('time test', function(){
-  it('small 1,000', function(){
-    var str = createString(1000, 'aaaaaaaaaa');
-    var start = Date.now();
-    expect(util.getLargestPalindrome(str)[0]).to.be.gte(10);
-    var end = Date.now();
-    expect(end-start).to.be.lte(100);
-  });
-  it('medium 10,000', function(){
-    var str = createString(10000, 'aaaaaaaaaa');
-    var start = Date.now();
-    expect(util.getLargestPalindrome(str)[0]).to.be.gte(10);
-    var end = Date.now();
-    expect(end-start).to.be.lte(1000);
-  });
-  it('large 100,000', function(){
-    var str = createString(100000, 'aaaaaaaaaa');
-    var start = Date.now();
-    expect(util.getLargestPalindrome(str)[0]).to.be.gte(10);
-    var end = Date.now();
-    expect(end-start).to.be.lte(10000);
-  });
-});
-
-function createString(length, insertInMiddle){
-  var result = '';
-  for (var i = 0; i < Math.floor(length/2); i++){
-    result += letters[Math.floor(Math.random()*letters.length)];
-  }
-  result += insertInMiddle;
-  for (var j = 0; j < Math.floor(length/2); j++){
-    result += letters[Math.floor(Math.random()*letters.length)];
-  }
-  return result;
-}
