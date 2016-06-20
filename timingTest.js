@@ -3,7 +3,7 @@ var util = require('./index');
 var fs = require('fs');
 var RollingPalindrome = require('./RollingPalindrome');
 
-var letters = 'a';
+var letters = 'abcdefghijklmnopqrstuvwxyz';
 
 var csv = 'Total Timing Test\n';
 var multiplier = 1000;
@@ -14,10 +14,10 @@ for (var x = 1; x < 201; x++){
   var end = Date.now();
   csv += `${x*multiplier},${end-start}\n`;
 }
-
+console.log('Done with total timing test');
 csv += '\nPalindromic Rolling String Hash Timing Test\n';
 
-var multiplier = 10000;
+var multiplier = 100;
 var rh = new RollingPalindrome();
 for (var x = 1; x < 21; x++){
   var start = Date.now();
@@ -35,14 +35,18 @@ for (var x = 1; x < 21; x++){
 fs.writeFile('timingTestResult.csv', csv);
 
 
-function createString(length, insertInMiddle){
+function createString(length, insertInMiddle, singleLetter){
+  var choices = letters;
+  if (singleLetter){
+    choices = singleLetter;
+  }
   var result = '';
   for (var i = 0; i < Math.floor(length/2); i++){
-    result += letters[Math.floor(Math.random()*letters.length)];
+    result += choices[Math.floor(Math.random()*choices.length)];
   }
   result += insertInMiddle;
   for (var j = 0; j < Math.floor(length/2); j++){
-    result += letters[Math.floor(Math.random()*letters.length)];
+    result += choices[Math.floor(Math.random()*choices.length)];
   }
   return result;
 }

@@ -74,7 +74,8 @@ RollingPalindrome.prototype.isPalindrome = function(){
   if (this.beg.getLength() > this.end.getLength()){
     remainder = this.beg.removeRight();
   }
-  var ans = this.beg.equals(this.end);
+  var ans = this.beg.equals(this.end) &&
+    this.beg.getString() == this.end.getString();
   if (remainder){
     this.beg.addRight(remainder);
   }
